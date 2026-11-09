@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sumit Math Test</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #eaf3ff;
+            padding: 15px;
+        }
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+        .question {
+            background: white;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 10px;
+        }
+        button {
+            background: green;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>SUMIT MATH TEST</h1>
+<h3>Class 7 - Mathematics</h3>
+
+<form id="quiz">
+
+<div class="question">
+<p>1. 15 + 25 = ?</p>
+<input type="radio" name="q1" value="40"> 40<br>
+<input type="radio" name="q1" value="30"> 30<br>
+<input type="radio" name="q1" value="50"> 50
+</div>
+
+<div class="question">
+<p>2. 8 × 7 = ?</p>
+<input type="radio" name="q2" value="56"> 56<br>
+<input type="radio" name="q2" value="48"> 48<br>
+<input type="radio" name="q2" value="64"> 64
+</div>
+
+<div class="question">
+<p>3. 100 का 50% कितना है?</p>
+<input type="radio" name="q3" value="50"> 50<br>
+<input type="radio" name="q3" value="25"> 25<br>
+<input type="radio" name="q3" value="75"> 75
+</div>
+
+<div class="question">
+<p>4. 12 का वर्ग कितना है?</p>
+<input type="radio" name="q4" value="144"> 144<br>
+<input type="radio" name="q4" value="124"> 124<br>
+<input type="radio" name="q4" value="24"> 24
+</div>
+
+<div class="question">
+<p>5. 5 का घन कितना है?</p>
+<input type="radio" name="q5" value="125"> 125<br>
+<input type="radio" name="q5" value="25"> 25<br>
+<input type="radio" name="q5" value="100"> 100
+</div>
+
+<div class="question">
+<p>6. 1/2 + 1/2 = ?</p>
+<input type="radio" name="q6" value="1"> 1<br>
+<input type="radio" name="q6" value="2"> 2<br>
+<input type="radio" name="q6" value="1/2"> 1/2
+</div>
+
+<div class="question">
+<p>7. त्रिभुज के कोणों का योग कितना है?</p>
+<input type="radio" name="q7" value="180"> 180°<br>
+<input type="radio" name="q7" value="90"> 90°<br>
+<input type="radio" name="q7" value="360"> 360°
+</div>
+
+<div class="question">
+<p>8. 200 का 10% कितना है?</p>
+<input type="radio" name="q8" value="20"> 20<br>
+<input type="radio" name="q8" value="10"> 10<br>
+<input type="radio" name="q8" value="30"> 30
+</div>
+
+<div class="question">
+<p>9. 9 × 9 = ?</p>
+<input type="radio" name="q9" value="81"> 81<br>
+<input type="radio" name="q9" value="72"> 72<br>
+<input type="radio" name="q9" value="99"> 99
+</div>
+
+<div class="question">
+<p>10. 1000 ÷ 10 = ?</p>
+<input type="radio" name="q10" value="100"> 100<br>
+<input type="radio" name="q10" value="10"> 10<br>
+<input type="radio" name="q10" value="1000"> 1000
+</div>
+
+<button type="button" onclick="checkResult()">Submit Test</button>
+
+</form>
+
+<h2 id="result"></h2>
+
+<script>
+function checkResult() {
+    let answers = {
+        q1:"40", q2:"56", q3:"50", q4:"144",
+        q5:"125", q6:"1", q7:"180", q8:"20",
+        q9:"81", q10:"100"
+    };
+
+    let score = 0;
+
+    for(let q in answers) {
+        let selected = document.querySelector(
+            'input[name="'+q+'"]:checked'
+        );
+        if(selected && selected.value === answers[q]) {
+            score++;
+        }
+    }
+
+    let percent = score * 10;
+
+    document.getElementById("result").innerHTML =
+        "आपका Score: " + score + "/10<br>" +
+        "Percentage: " + percent + "%";
+}
+</script>
+
+</body>
+</html>
